@@ -5,6 +5,7 @@ import Nav from "@/components/layout/Nav/Nav";
 import Footer from "@/components/layout/Footer/Footer";
 import SkipLink from "@/components/layout/SkipLink/SkipLink";
 import NoScriptBanner from "@/components/layout/NoScriptBanner/NoScriptBanner";
+import ServiceWorkerCleanup from "@/components/layout/ServiceWorkerCleanup/ServiceWorkerCleanup";
 import "@/styles/globals.css";
 import "@/styles/fonts.css";
 import { siteConfig } from "@/config/site";
@@ -70,6 +71,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="bg-grid-1">
+        <ServiceWorkerCleanup />
         <SkipLink />
         <NoScriptBanner />
         <Nav />
