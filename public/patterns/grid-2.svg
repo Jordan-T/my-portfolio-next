@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <defs>
+    <pattern id="v2" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <line x1="30" y1="0"  x2="60" y2="15" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="30" y1="0"  x2="0"  y2="15" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="60" y1="15" x2="30" y2="30" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="0"  y1="15" x2="30" y2="30" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="30" y1="30" x2="60" y2="45" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="30" y1="30" x2="0"  y2="45" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="0"  y1="15" x2="0"  y2="45" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="60" y1="15" x2="60" y2="45" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="0"  y1="45" x2="30" y2="60" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="60" y1="45" x2="30" y2="60" stroke="#64ffda" stroke-width="0.8"/>
+      <line x1="30" y1="0"  x2="30" y2="30" stroke="#64ffda" stroke-width="0.8"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="600" fill="#0a192f"/>
+  <rect width="600" height="600" fill="url(#v2)"/>
+</svg>

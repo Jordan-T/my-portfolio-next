@@ -1,0 +1,80 @@
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.job {
+  padding-left: var(--space-lg);
+  border-left: 2px solid var(--color-line);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-sm);
+}
+
+.role {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.at {
+  color: var(--color-accent);
+}
+
+.at a {
+  color: var(--color-accent);
+  transition: opacity var(--transition-base);
+}
+
+.at a:hover {
+  opacity: 0.8;
+}
+
+.at a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0.25rem;
+}
+
+.range {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+}
+
+.duration {
+  color: var(--color-accent);
+  margin-left: var(--space-2xs);
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.highlights li {
+  position: relative;
+  padding-left: var(--space-lg);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.highlights li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+}
+
+.highlights strong {
+  color: var(--color-text);
+  font-weight: 700;
+}

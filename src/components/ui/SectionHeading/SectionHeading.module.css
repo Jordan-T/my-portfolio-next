@@ -1,0 +1,35 @@
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-bottom: var(--space-2xl);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--color-white);
+
+  &::after {
+    content: "";
+    display: block;
+    height: var(--border-width);
+    width: 18.75rem;
+    max-width: 40%;
+    background: var(--color-line);
+  }
+}
+
+.number {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: var(--color-accent);
+}
+
+@media (--mq-ui) {
+  .heading {
+    white-space: normal;
+  }
+
+  .heading::after {
+    display: none;
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-css-modules"],
+  "rules": {
+    "at-rule-no-unknown": [true, { "ignoreAtRules": ["custom-media"] }],
+    "selector-class-pattern": "^[a-z][a-z0-9]*(-[a-z0-9]+)*$",
+    "value-keyword-case": ["lower", { "ignoreKeywords": ["currentColor"] }],
+    "unit-disallowed-list": [
+      ["px"],
+      {
+        "ignoreProperties": {
+          "px": ["/border/", "/outline/", "/background/"]
+        },
+        "message": "Use rem or a token; px is allowed only on border / outline / background (raw px values live in globals.css / media.css)."
+      }
+    ],
+    "color-no-hex": true,
+    "color-named": "never",
+    "function-disallowed-list": ["rgb", "rgba", "hsl", "hsla"],
+    "color-function-notation": null,
+    "color-function-alias-notation": null,
+    "alpha-value-notation": null,
+    "color-hex-length": null,
+    "property-no-deprecated": null,
+    "declaration-empty-line-before": null,
+    "rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "custom-property-empty-line-before": null
+  },
+  "overrides": [
+    {
+      "files": ["**/*.module.css"],
+      "rules": {
+        "selector-class-pattern": [
+          "^[a-z][a-zA-Z0-9]*$",
+          { "message": "CSS Modules class selectors use lowerCamelCase" }
+        ]
+      }
+    },
+    {
+      "files": ["src/styles/globals.css"],
+      "rules": {
+        "unit-disallowed-list": null,
+        "color-no-hex": null,
+        "color-named": null,
+        "function-disallowed-list": null
+      }
+    },
+    {
+      "files": ["src/styles/media.css"],
+      "rules": { "unit-disallowed-list": null }
+    }
+  ]
+}

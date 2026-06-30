@@ -1,0 +1,37 @@
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.75rem;
+  width: 1em;
+  height: 1.1547em;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  background: var(--border-subtle);
+  color: var(--color-text-muted);
+  transition:
+    background var(--transition-base),
+    color var(--transition-base);
+}
+
+.btn:hover {
+  background: var(--accent-edge);
+  color: var(--color-accent);
+}
+
+.btn:focus-visible {
+  background: var(--accent-edge);
+  color: var(--color-accent);
+}
+
+.icon {
+  max-width: 0.5em;
+}
+
+.small {
+  font-size: 2rem;
+}
+
+.medium {
+  font-size: 2.75rem;
+}

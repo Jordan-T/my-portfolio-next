@@ -1,0 +1,134 @@
+.desc {
+  font-size: 1.125rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.date {
+  margin-bottom: var(--space-lg);
+  font-size: 0.8125rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+/* ── Links ── */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+.main {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: var(--space-3xl);
+  max-width: var(--maxw);
+  margin: var(--space-3xl) auto var(--space-4xl);
+  padding: 0 var(--gutter);
+}
+
+/* ── Body ── */
+.body {
+  composes: content from "@/styles/content.module.css";
+
+  max-width: var(--maxw-prose);
+}
+
+.toc {
+  align-self: flex-start;
+  min-width: 15rem;
+  margin: calc(var(--space-2xl) / -2) calc(var(--gutter) / -2) var(--space-xl) 0;
+  padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
+  border-left: 2px solid var(--accent-edge);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  position: sticky;
+  top: calc(var(--header-height) + var(--space-md));
+}
+
+.tocTitle {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin: 0 0 var(--space-sm);
+}
+
+.tocList {
+  composes: list from "@/styles/content.module.css";
+
+  a:hover,
+  a:focus-visible {
+    text-decoration: underline;
+    color: var(--color-accent);
+  }
+}
+
+@media (--mq-until-desk) {
+  .toc {
+    display: none;
+  }
+}
+
+.takeawaysBlock,
+.decisionBlock {
+  --border-color: var(--accent-edge);
+  --title-color: var(--color-accent);
+  --card-gutter: calc(var(--gutter) / 2);
+  padding: calc(var(--card-gutter) / 3 * 2) var(--card-gutter);
+  margin: var(--space-xl) calc(var(--card-gutter) * -1);
+  border-left: 2px solid var(--border-color);
+  background: var(--color-surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.8125rem;
+  scroll-margin-top: var(--header-height);
+
+  &:first-child {
+    margin-top: calc(var(--card-gutter) / -2);
+  }
+}
+
+.takeawaysLabel,
+.decisionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--title-color);
+  margin: 0 0 var(--space-sm);
+}
+
+.takeawaysList {
+  composes: list from "@/styles/content.module.css";
+}
+
+.decisionBlock {
+  --border-color: var(--alert-edge);
+  --title-color: var(--color-accent-alert);
+}
+
+.decision {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+@media (--mq-ui) {
+  .decisionBlock,
+  .takeawaysBlock {
+    --card-gutter: var(--gutter);
+  }
+}
+
+.contactCard {
+  margin-block: var(--space-4xl);
+}

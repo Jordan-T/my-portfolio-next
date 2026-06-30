@@ -1,0 +1,80 @@
+.card {
+  composes: surface from "@/styles/card.module.css";
+  position: relative;
+}
+
+.featured {
+  grid-column: 1 / -1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.titleLink::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+.decisionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-md) 0;
+  border-left: 2px solid var(--alert-edge);
+  background: var(--alert-wash);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.decisionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-alert);
+}
+
+.decision {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.tags {
+  margin-top: var(--space-md);
+}
+
+/* ── Status badge colors (pill base = Badge primitive) ── */
+.statusWip {
+  color: var(--status-wip-c);
+  border-color: var(--status-wip-b);
+}
+
+.statusDone {
+  color: var(--status-done-c);
+  border-color: var(--status-done-b);
+}
+
+.statusClient {
+  color: var(--status-client-c);
+  border-color: var(--status-client-b);
+}

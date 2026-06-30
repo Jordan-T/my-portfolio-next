@@ -1,0 +1,14 @@
+.banner {
+  padding: var(--space-xs) var(--gutter);
+  background: var(--color-surface);
+  border-bottom: var(--border-width) solid var(--color-line);
+  color: var(--color-text-muted);
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-weight: 700;
+}

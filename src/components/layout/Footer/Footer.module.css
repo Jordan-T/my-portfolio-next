@@ -1,0 +1,31 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--gutter);
+  background: var(--color-bg);
+  border-top: 1px solid var(--border-accent-soft);
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+}
+
+.link {
+  color: currentColor;
+  transition: color var(--transition-base);
+}
+
+.link:hover,
+.link:focus {
+  color: var(--color-accent);
+}
+
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+}

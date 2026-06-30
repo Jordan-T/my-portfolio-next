@@ -1,0 +1,114 @@
+.content {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text-muted);
+
+  p,
+  ul,
+  ol,
+  hr {
+    font-size: 1em;
+
+    &:not(:last-child) {
+      margin-bottom: var(--space-md);
+    }
+  }
+
+  p {
+    font-size: 1em;
+    line-height: 1.8;
+  }
+
+  hr {
+    border: none;
+    height: var(--border-width);
+    background: var(--color-line);
+    margin: var(--space-md) 0;
+  }
+}
+
+.heading2 {
+  counter-increment: section2;
+  counter-reset: section3;
+  scroll-margin-top: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-lg);
+  /* white-space: nowrap; */
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--color-white);
+
+  &::before {
+    content: counter(section2, decimal-leading-zero) ".";
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.875em;
+    color: var(--color-accent);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: var(--border-width);
+    width: 18.75rem;
+    flex-shrink: 1;
+    flex-basis: 10em;
+    min-width: 0;
+    max-width: 40%;
+    background: var(--color-line);
+  }
+}
+
+.heading3 {
+  counter-increment: section3;
+  margin-top: var(--space-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  margin-bottom: var(--space-md);
+  white-space: nowrap;
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  color: var(--color-white);
+
+  &::before {
+    content: counter(section3, upper-roman) ".";
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.875em;
+    color: var(--color-accent);
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    height: var(--border-width);
+    width: 18.75rem;
+    max-width: 40%;
+    background: var(--color-line);
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+
+  & li {
+    position: relative;
+    padding-left: var(--space-lg);
+
+    &::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.card {
+  composes: surface from "@/styles/card.module.css";
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-sm);
+}
+
+@media (--mq-compact) {
+  .wide {
+    grid-column: span 1;
+  }
+}

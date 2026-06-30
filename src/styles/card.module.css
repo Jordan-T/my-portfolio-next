@@ -1,0 +1,35 @@
+.surface {
+  --border: var(--border-subtle);
+  display: block;
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base);
+
+  &:hover {
+    --border: var(--accent-edge);
+    background: var(--color-surface-raised);
+  }
+
+  &:focus-within {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 0.25rem;
+  }
+
+  &:is(a, button):hover {
+    transform: translateY(-0.25rem);
+  }
+}
+
+.surfaceRaised {
+  border-color: var(--accent-edge);
+  background: var(--color-surface-raised);
+
+  &:focus-within {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 0.25rem;
+  }
+}

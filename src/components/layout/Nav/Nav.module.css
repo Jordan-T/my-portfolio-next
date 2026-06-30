@@ -1,0 +1,194 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--header-height);
+  padding: var(--space-md) var(--gutter);
+  background: color-mix(in srgb, var(--color-bg) 85%, transparent);
+  backdrop-filter: blur(0.5rem);
+  border-bottom: 1px solid var(--border-accent-soft);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-accent);
+  transition: transform var(--transition-base);
+}
+
+.logo:hover {
+  transform: scale(1.06);
+}
+
+.logoMark {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+/* Visually hidden but keyboard-focusable checkbox (no-JS toggle). */
+.toggle {
+  display: none;
+  position: absolute;
+  width: 0.0625rem;
+  height: 0.0625rem;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ── Hamburger (mobile only) ── */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  padding: var(--space-2xs);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.burger span {
+  height: 0.125rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  transform-origin: center;
+  transition:
+    transform var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.toggle:focus-visible + .burger {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0.25rem;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Menu (desktop) ── */
+.menu {
+  --menu-gap: clamp(var(--space-lg), 4vw, var(--space-3xl));
+  display: flex;
+  align-items: center;
+  gap: var(--menu-gap);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--menu-gap) / 2);
+}
+
+.links li:not(:first-child)::before {
+  content: " · ";
+  color: var(--color-accent);
+  vertical-align: middle;
+  margin-right: calc(var(--menu-gap) / 2);
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.8125rem;
+  color: var(--color-text);
+  transition: color var(--transition-base);
+}
+
+.externalIcon {
+  opacity: 0.5;
+}
+
+.links a:hover {
+  color: var(--color-accent);
+}
+
+.cv {
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--color-accent);
+  transition: background var(--transition-base);
+}
+
+.cv:hover {
+  background: var(--accent-wash);
+}
+
+/* ── Mobile ── */
+@media (--mq-ui) {
+  .toggle {
+    display: inline-block;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-xl);
+    padding: var(--space-2xl);
+    background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+    backdrop-filter: blur(0.5rem);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--transition-base),
+      visibility var(--transition-base);
+  }
+
+  .toggle:checked ~ .menu {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  html:has(.toggle:checked),
+  body:has(.toggle:checked) {
+    overflow: clip;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .links li::before {
+    display: none;
+  }
+
+  .links a {
+    font-size: 1rem;
+  }
+
+  .cv {
+    margin-top: var(--space-md);
+    padding: var(--space-md) var(--space-2xl);
+    font-size: 0.875rem;
+  }
+
+  /* Burger → X */
+  .toggle:checked + .burger span:nth-child(1) {
+    transform: translateY(0.625rem) rotate(45deg);
+  }
+
+  .toggle:checked + .burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .toggle:checked + .burger span:nth-child(3) {
+    transform: translateY(-0.625rem) rotate(-45deg);
+  }
+}

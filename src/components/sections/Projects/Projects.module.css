@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.more {
+  display: block;
+  width: max-content;
+  margin: var(--space-2xl) auto 0;
+}
+
+@media (--mq-grid) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

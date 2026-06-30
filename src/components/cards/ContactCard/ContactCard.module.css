@@ -1,0 +1,121 @@
+.card {
+  composes: surface from "@/styles/card.module.css";
+
+  max-width: var(--maxw-prose);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+
+/* Identity column ------------------------------------------------------- */
+.identity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-sm) var(--space-xl);
+  padding-right: var(--space-2xl);
+  border-right: 1px solid var(--border);
+  text-align: center;
+}
+
+.asideContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  text-align: center;
+}
+
+.name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.socials {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+/* Body column ----------------------------------------------------------- */
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+}
+
+.dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: var(--space-xs);
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0.5rem currentColor;
+}
+
+.toneAvailable {
+  color: var(--status-available-c);
+  border-color: var(--status-available-b);
+  background: var(--status-available-bg);
+}
+
+.toneListening {
+  color: var(--status-listening-c);
+  border-color: var(--status-listening-b);
+  background: var(--status-listening-bg);
+}
+
+.overline {
+  margin-top: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.lead {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: var(--color-white);
+}
+
+.detail {
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+@media (--mq-grid) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .identity {
+    flex-direction: row;
+    padding-right: 0;
+    padding-bottom: var(--space-xl);
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}

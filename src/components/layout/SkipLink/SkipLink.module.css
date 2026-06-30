@@ -1,0 +1,34 @@
+.skipLink {
+  position: fixed;
+  top: 0;
+  left: var(--space-md);
+  z-index: 1000;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 1em 2em;
+  border: 1px solid var(--color-accent);
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+  background: var(--color-bg);
+  font-size: 0.75rem;
+  border-radius: 0 0 var(--radius-xs) var(--radius-xs);
+  /* Hidden above the viewport until keyboard focus. Pushed past -100%
+     because some browsers still render a thin focus outline at exactly
+     -100%, which would otherwise peek into view. */
+  transform: translateY(-105%);
+  transition: transform var(--transition-base);
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--color-accent);
+  outline-offset: 0.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skipLink {
+    transition: none;
+  }
+}

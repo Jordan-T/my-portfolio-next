@@ -1,0 +1,71 @@
+/* ── Hex variant ── */
+.wrap {
+  --width: clamp(9.375rem, 30vw, 21.875rem);
+  --float-height: calc(var(--width) * 0.05);
+  position: relative;
+  width: var(--width);
+  height: calc(var(--width) * 3 / 2);
+  clip-path: polygon(
+    50% 0%,
+    100% 0%,
+    100% calc(100% - var(--width) * 1.1547 * 0.25),
+    50% 100%,
+    0% calc(100% - var(--width) * 1.1547 * 0.25),
+    0% 0%
+  );
+  animation: float 10s ease-in-out infinite;
+  will-change: transform;
+  shape-outside: polygon(
+    60% 0%,
+    100% 25%,
+    100% 80%,
+    50% 100%,
+    0% 80%,
+    0% 25%,
+    40% 0%
+  );
+}
+
+.hex {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(var(--width) * 1.1547);
+  background: var(--color-surface-accent-raised);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* Fills .wrap so the photo keeps its inset:0 box; owns the one-shot entrance. */
+.reveal {
+  position: absolute;
+  inset: 0;
+  animation: appear 1.25s var(--transition-base) both;
+}
+
+.photo {
+  --float-height: calc(var(--width) * -0.1);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: float 10s ease-in-out infinite 1s;
+  will-change: transform;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(calc(-1 * var(--float-height, 0.5rem)));
+  }
+}
+
+@keyframes appear {
+  0% {
+    transform: translate3d(0, 100%, 0);
+  }
+}

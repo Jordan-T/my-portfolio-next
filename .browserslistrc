@@ -1,0 +1,10 @@
+# Modern baseline. Tells Next/SWC to stop down-leveling and injecting polyfills
+# for features these browsers already ship natively — fixes Lighthouse's
+# "Legacy JavaScript" audit and trims the client bundle.
+# Covered natively here: Array.prototype.at, Object.hasOwn, Object.fromEntries,
+# Array.prototype.flat/flatMap, String.prototype.trimStart/trimEnd.
+chrome >= 100
+edge >= 100
+firefox >= 100
+safari >= 16
+ios_saf >= 16

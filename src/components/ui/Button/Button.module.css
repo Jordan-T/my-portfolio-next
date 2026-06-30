@@ -1,0 +1,85 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.875rem;
+  transition:
+    color var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 0.25rem;
+  }
+}
+
+/* outlined accent */
+.primary {
+  gap: var(--space-sm);
+  padding: 1em 2em;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--color-accent);
+  letter-spacing: 0.06em;
+
+  &:hover {
+    background: var(--accent-wash);
+  }
+}
+
+/* text + CSS arrow */
+.link {
+  color: var(--color-text-muted);
+
+  &::after {
+    content: "→";
+    display: inline-block;
+    margin-left: var(--space-xs);
+    transition: transform var(--transition-base);
+  }
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  &:hover::after {
+    transform: translateX(0.3125em);
+  }
+}
+
+/* text + CSS arrow */
+.back {
+  color: var(--color-text-muted);
+
+  &::before {
+    content: "←";
+    display: inline-block;
+    margin-right: var(--space-xs);
+    transition: transform var(--transition-base);
+  }
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  &:hover::before {
+    transform: translateX(-0.3125em);
+  }
+}
+
+/* subtle bordered (contact links, external links) */
+.ghost {
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+
+  &:hover {
+    color: var(--color-accent);
+    border-color: var(--accent-edge);
+    background: var(--accent-wash-soft);
+  }
+}

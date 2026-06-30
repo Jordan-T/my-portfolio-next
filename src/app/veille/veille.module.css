@@ -1,0 +1,19 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--space-3xl) var(--gutter);
+}
+
+@media (--mq-grid) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactCard {
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-4xl);
+}
