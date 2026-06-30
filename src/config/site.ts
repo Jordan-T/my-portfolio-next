@@ -9,7 +9,7 @@ export const siteConfig = {
   location: "Lille Métropole, France",
   url: "https://jordan-t.dev",
   email: "contact@jordan-t.dev",
-  cvUrl: "/cv.pdf",
+  cvUrl: "/cv.pdf?v=2",
   availabilityStatus: "passive" satisfies AvailabilityStatus,
   philosophy: `Plus de ${yearsOfExperience} ans à concevoir des architectures front-end durables. Bâtir un système robuste impose de traiter la performance et l'accessibilité comme des fondations. Convaincu que l'excellence se construit à plusieurs, je m'investis pour transmettre cette exigence au quotidien, susciter la passion technique et faire grandir l'équipe.`,
   socials: [
