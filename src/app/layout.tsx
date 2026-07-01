@@ -5,7 +5,6 @@ import Nav from "@/components/layout/Nav/Nav";
 import Footer from "@/components/layout/Footer/Footer";
 import SkipLink from "@/components/layout/SkipLink/SkipLink";
 import NoScriptBanner from "@/components/layout/NoScriptBanner/NoScriptBanner";
-import ServiceWorkerCleanup from "@/components/layout/ServiceWorkerCleanup/ServiceWorkerCleanup";
 import "@/styles/globals.css";
 import "@/styles/fonts.css";
 import { siteConfig } from "@/config/site";
@@ -59,6 +58,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Registers the self-destructing cleanup service worker (public/sw.js) that
+// purges stale v1 caches, unregisters itself, then reloads. Inline so it runs
+// at parse time — earlier than a React effect — and needs no client component.
+const serviceWorkerCleanupScript = `
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js").catch(function () {});
+}`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -71,7 +78,6 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
     >
       <body className="bg-grid-1">
-        <ServiceWorkerCleanup />
         <SkipLink />
         <NoScriptBanner />
         <Nav />
@@ -80,6 +86,9 @@ export default function RootLayout({
         </main>
         <Footer />
         <Analytics />
+        <script
+          dangerouslySetInnerHTML={{ __html: serviceWorkerCleanupScript }}
+        />
       </body>
     </html>
   );
