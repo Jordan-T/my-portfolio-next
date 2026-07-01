@@ -27,7 +27,6 @@ function fontFile(pkg: string, file: string): string {
 }
 
 function registerFonts() {
-  // body
   Font.register({
     family: "Inter",
     fonts: [
@@ -47,7 +46,6 @@ function registerFonts() {
     ],
   });
 
-  // H1 & H3
   Font.register({
     family: "Geist",
     fonts: [
@@ -58,7 +56,6 @@ function registerFonts() {
     ],
   });
 
-  // H2
   Font.register({
     family: "Space Grotesk",
     fonts: [

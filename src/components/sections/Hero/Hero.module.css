@@ -32,7 +32,6 @@
 }
 
 .title {
-  /* max-width: 450px; */
   font-size: clamp(2.75rem, 7vw, 4.25rem);
   line-height: 1;
   color: var(--color-white);

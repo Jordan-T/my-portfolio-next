@@ -63,7 +63,7 @@
   margin-top: var(--space-md);
 }
 
-/* ── Status badge colors (pill base = Badge primitive) ── */
+/* Status colors only; base pill shape comes from the Badge primitive. */
 .statusWip {
   color: var(--status-wip-c);
   border-color: var(--status-wip-b);

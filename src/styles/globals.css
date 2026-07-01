@@ -77,10 +77,6 @@ button {
   --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Canonical breakpoints are defined once as custom media in src/styles/media.css
-   (--mq-compact 600px, --mq-ui 720px, --mq-grid 900px) and used via
-   @media (--mq-*). Never repeat a literal width in a @media. */
-
 /* ============================================================
    Base
    ============================================================ */

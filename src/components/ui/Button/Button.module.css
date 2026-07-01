@@ -13,7 +13,6 @@
   }
 }
 
-/* outlined accent */
 .primary {
   gap: var(--space-sm);
   padding: 1em 2em;
@@ -29,7 +28,6 @@
   }
 }
 
-/* text + CSS arrow */
 .link {
   color: var(--color-text-muted);
 
@@ -49,7 +47,6 @@
   }
 }
 
-/* text + CSS arrow */
 .back {
   color: var(--color-text-muted);
 
@@ -69,7 +66,6 @@
   }
 }
 
-/* subtle bordered (contact links, external links) */
 .ghost {
   gap: var(--space-sm);
   padding: var(--space-sm) var(--space-lg);

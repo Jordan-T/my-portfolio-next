@@ -1,4 +1,3 @@
-/* ── Hex variant ── */
 .wrap {
   --width: clamp(9.375rem, 30vw, 21.875rem);
   --float-height: calc(var(--width) * 0.05);

@@ -44,7 +44,6 @@ async function main() {
         overflow: "hidden",
       }}
     >
-      {/* Portrait */}
       <div
         style={{
           display: "flex",
@@ -68,7 +67,6 @@ async function main() {
         />
       </div>
 
-      {/* Text */}
       <div
         style={{
           display: "flex",
@@ -78,7 +76,6 @@ async function main() {
           padding: "72px 80px 80px 40px",
         }}
       >
-        {/* Role */}
         <div
           style={{
             display: "flex",
@@ -102,7 +99,6 @@ async function main() {
           {siteConfig.role}
         </div>
 
-        {/* Name */}
         <div
           style={{
             marginTop: "30px",
@@ -116,7 +112,6 @@ async function main() {
           {siteConfig.name}
         </div>
 
-        {/* URL */}
         <div
           style={{
             marginTop: "36px",
