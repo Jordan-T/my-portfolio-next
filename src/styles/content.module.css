@@ -30,7 +30,6 @@
 .heading2 {
   counter-increment: section2;
   counter-reset: section3;
-  scroll-margin-top: var(--header-height);
   display: flex;
   align-items: center;
   gap: var(--space-sm);

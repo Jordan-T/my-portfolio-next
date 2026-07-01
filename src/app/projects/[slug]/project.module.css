@@ -87,7 +87,6 @@
   background: var(--color-surface);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-size: 0.8125rem;
-  scroll-margin-top: var(--header-height);
 
   &:first-child {
     margin-top: calc(var(--card-gutter) / -2);
