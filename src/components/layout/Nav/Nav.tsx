@@ -10,9 +10,19 @@ type NavLink = {
   target?: string;
   rel?: string;
   external?: boolean;
+  optionalLink?: boolean;
 };
 
+// SPA routing keeps the Nav mounted, so #nav-toggle stays checked after use;
+// reset it on any click inside the menu (link or overlay backdrop) to close it.
+const closeMobileMenuScript = `
+document.getElementById("site-nav").addEventListener("click", function () {
+  var toggle = document.getElementById("nav-toggle");
+  if (toggle) toggle.checked = false;
+});`;
+
 const NAV_LINKS: NavLink[] = [
+  { href: "/", label: "Accueil", optionalLink: true },
   { href: "/#experience", label: "Expérience" },
   { href: "/projects", label: "Projets" },
   { href: "/veille", label: "Veille" },
@@ -32,11 +42,6 @@ export default function Nav() {
         <Logo className={styles.logoMark} />
       </Link>
 
-      {/*
-        CSS-only mobile menu: a visually-hidden (but focusable) checkbox toggles
-        the menu via the `:checked ~ .menu` rule. Works with zero JavaScript, so
-        the nav stays a Server Component and remains usable without JS.
-      */}
       <input type="checkbox" id="nav-toggle" className={styles.toggle} />
       <label htmlFor="nav-toggle" className={styles.burger} aria-label="Menu">
         <span aria-hidden="true" />
@@ -44,10 +49,19 @@ export default function Nav() {
         <span aria-hidden="true" />
       </label>
 
-      <nav className={styles.menu} aria-label="Navigation principale">
+      <nav
+        id="site-nav"
+        className={styles.menu}
+        aria-label="Navigation principale"
+      >
         <ul className={styles.links}>
           {NAV_LINKS.map((link) => (
-            <li key={link.href}>
+            <li
+              key={link.href}
+              className={
+                link.optionalLink ? styles.optionalLink : undefined
+              }
+            >
               <Link
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
@@ -79,6 +93,8 @@ export default function Nav() {
           CV
         </a>
       </nav>
+
+      <script dangerouslySetInnerHTML={{ __html: closeMobileMenuScript }} />
     </header>
   );
 }
