@@ -26,6 +26,9 @@ After every feature or refactor, on the diff (`git diff`), before declaring done
 
 **Boy-Scout**
 - Dead code, commented-out blocks, leftover `console.log`? Remove them.
+- Comments that restate the code, or decorative section labels outside the
+  foundational config files (`globals.css`, `theme.ts`, `media.css`, `fonts.css`)?
+  Remove them (see conventions).
 - Names descriptive and consistent with neighbours (English, casing)?
 - Touched something fragile nearby that's cheap to improve? Improve it.
 

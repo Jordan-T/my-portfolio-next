@@ -39,10 +39,13 @@
   used in a single place; don't over-abstract.
 - **Clean code.** Small focused units, descriptive names, no dead or
   commented-out code, no leftover `console.log`.
-- **Comments: sparse, only when truly useful.** Code should be self-explanatory
-  through naming and structure. Add a comment only to capture a non-obvious
-  "why" (a constraint, a trade-off, a workaround) that the code itself can't
-  express — never to restate what the code already says.
+- **Comments: sparse, only when truly useful. Default to none.** Code should be
+  self-explanatory through naming and structure. Add a comment only to capture a
+  non-obvious "why" (a constraint, a trade-off, a workaround) that the code
+  itself can't express — never to restate what the code already says. Decorative
+  section/group labels are tolerated only as navigation aids in long foundational
+  files (`globals.css`, `theme.ts`, `media.css`, `fonts.css`); in components and
+  scripts they are noise, so omit them.
 - Run a DRY/KISS pass on the diff after every feature — see
   [`code-review`](../skills/code-review/SKILL.md).
 
