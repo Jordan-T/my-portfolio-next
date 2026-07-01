@@ -55,7 +55,7 @@ export default function ContactCard({ className }: { className?: string }) {
         <p className={styles.lead}>Échangeons sur vos projets</p>
         <p className={styles.detail}>
           Tech Lead Front-End spécialisé en architecture web. Conception
-          d'interfaces performantes et industrialisation des pratiques de
+          d&apos;interfaces performantes et industrialisation des pratiques de
           développement.
         </p>
         <div className={styles.actions}>

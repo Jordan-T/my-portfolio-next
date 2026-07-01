@@ -11,10 +11,10 @@ export default function Contact() {
         title="Prochaine étape&nbsp;: Construire la suite"
       />
       <p className={styles.sub}>
-        La réussite d'un projet web repose sur des bases techniques saines et
-        une vision à long terme. Si vous cherchez à structurer vos applications
-        front-end, à optimiser vos performances ou à consolider vos pratiques de
-        développement, n'hésitez pas à engager la discussion.
+        La réussite d&apos;un projet web repose sur des bases techniques saines
+        et une vision à long terme. Si vous cherchez à structurer vos
+        applications front-end, à optimiser vos performances ou à consolider vos
+        pratiques de développement, n&apos;hésitez pas à engager la discussion.
       </p>
       <ContactCard />
     </Section>

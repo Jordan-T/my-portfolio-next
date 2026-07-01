@@ -9,12 +9,10 @@
   align-items: center;
 }
 
-/* Identity column ------------------------------------------------------- */
 .identity {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   justify-content: space-evenly;
-  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-sm) var(--space-xl);
   padding-right: var(--space-2xl);
@@ -43,7 +41,6 @@
   gap: var(--space-xs);
 }
 
-/* Body column ----------------------------------------------------------- */
 .body {
   display: flex;
   flex-direction: column;
