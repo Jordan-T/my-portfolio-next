@@ -2,11 +2,11 @@ import Button from "@/components/ui/Button/Button";
 import JordanT from "@/components/ui/JordanT/JordanT";
 import styles from "./Hero.module.css";
 import { siteConfig } from "@/config/site";
-import { yearsOfExperience } from "@/config/experience";
+import Container from "@/components/ui/Container/Container";
 
 export default function Hero() {
   return (
-    <section className={styles.hero}>
+    <Container tag="section" className={styles.hero}>
       <div className={styles.visual}>
         <JordanT priority />
       </div>
@@ -17,20 +17,17 @@ export default function Hero() {
           Jordan <span>Taisne</span>
         </h1>
         <p className={styles.desc}>
-          {`${yearsOfExperience} `}ans à façonner des interfaces.
-          Aujourd&apos;hui, je conçois des architectures front-end robustes,
-          performantes et évolutives.
-          <br />
-          Mon objectif : structurer des systèmes qui tiennent dans le temps et
-          transmettre cette exigence aux équipes qui les font vivre.
+          Aujourd&apos;hui, je conçois des socles front-end qui restent rapides
+          et durables, en partant toujours des contraintes réelles et des
+          équipes qui vont les faire vivre.
         </p>
         <div className={styles.ctas}>
-          <Button href="/#about">Découvrir l&apos;approche</Button>
-          <Button href="/#contact" variant="ghost">
+          <Button href="/#about">Découvrir ma vision</Button>
+          <Button href="/#contact" variant="secondary">
             Me contacter
           </Button>
         </div>
       </div>
-    </section>
+    </Container>
   );
 }

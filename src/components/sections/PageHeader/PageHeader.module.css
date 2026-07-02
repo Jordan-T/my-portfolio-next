@@ -8,9 +8,7 @@
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: var(--space-4xl);
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: var(--space-2xl) var(--gutter);
+  padding-block: var(--space-2xl);
 }
 
 .main {
@@ -24,8 +22,8 @@
 }
 
 .eyebrow {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: var(--space-sm);
@@ -42,7 +40,7 @@
 }
 
 .title {
-  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-size: var(--fs-h1);
   color: var(--color-white);
 
   &:not(:last-child) {
@@ -54,7 +52,7 @@
   flex: 0 0 auto;
 }
 
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .container {
     gap: var(--space-md);
   }

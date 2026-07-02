@@ -21,7 +21,6 @@ export const experience: Experience[] = [
     role: "Développeur Front-End & Lead front technique",
     startDate: "2015-07-08",
     endDate: "2020-04-29",
-    url: "https://newsroom.accenture.fr/fr/news/2017/company-news-release-altima-commerce-digital",
     highlights: [
       "Lead front technique sur le compte Crédit Agricole (sous-traitance IBM) : structure CSS pour une trentaine de devs back, intégration au CMS Adobe AEM, formation de deux juniors.",
       "Gouvernance de design system chez AXA : centralisation de 100+ couleurs via linter dans un fichier SASS unique, rendant chaque ajout conscient.",
@@ -29,11 +28,12 @@ export const experience: Experience[] = [
     ],
   },
   {
-    company: "insitaction",
+    company: "Insitaction",
+    companyInfo: "intégré au groupe Datasolution",
     role: "Intégrateur Front-End",
     startDate: "2011-10-01",
     endDate: "2015-07-07",
-    url: "https://www.datasolution.fr/partenariat-datasolution-altavia/",
+    url: "https://www.insitaction.com/",
     highlights: [
       "Industrialisation des pratiques de l'agence (normes Atomic Design, SASS/Compass, JS modulaire et POO).",
       "Conception d'expériences interactives et de configurateurs visuels avancés.",
@@ -42,7 +42,7 @@ export const experience: Experience[] = [
   },
 ];
 
-const firstJobStartDate = experience.sort((a, b) => {
+const firstJobStartDate = [...experience].sort((a, b) => {
   const aDate = a.startDate ? new Date(a.startDate) : new Date();
   const bDate = b.startDate ? new Date(b.startDate) : new Date();
   return aDate.getTime() - bDate.getTime();

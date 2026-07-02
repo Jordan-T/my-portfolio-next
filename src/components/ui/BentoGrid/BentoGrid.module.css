@@ -4,13 +4,13 @@
   gap: var(--space-md);
 }
 
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (--mq-compact) {
+@media (--mq-until-sm) {
   .grid {
     grid-template-columns: 1fr;
   }

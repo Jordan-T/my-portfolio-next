@@ -1,6 +1,6 @@
 .wrap {
   position: relative;
-  width: var(--width);
+  width: var(--hex-width, auto);
   max-width: 100%;
   aspect-ratio: 1 / 1.1547;
   background: var(--color-surface-accent);

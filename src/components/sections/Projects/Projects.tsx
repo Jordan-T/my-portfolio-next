@@ -10,7 +10,7 @@ export default function Projects() {
 
   return (
     <Section id="projects">
-      <SectionHeading number="03" title="Projets" />
+      <SectionHeading number="03" title="Architecture & Réalisations" />
       <div className={styles.grid}>
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
@@ -18,7 +18,7 @@ export default function Projects() {
       </div>
 
       <Button href="/projects" className={styles.more}>
-        Voir plus de projets
+        Explorer d&apos;autres réalisations
       </Button>
     </Section>
   );

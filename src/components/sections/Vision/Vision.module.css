@@ -4,18 +4,17 @@
   gap: var(--space-md);
 }
 
-
 .quote {
   flex: 1;
-  font-size: clamp(0.9375rem, 1.4vw, 1.0625rem);
-  line-height: 1.8;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-relaxed);
   color: var(--color-text);
   font-style: italic;
 }
 
 .soWhat {
-  font-size: 0.875rem;
-  line-height: 1.65;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 
   &:not(:last-child) {
@@ -35,8 +34,8 @@
 
 .groupLabel {
   font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.1em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -53,7 +52,7 @@
   transition:
     transform var(--transition-base),
     box-shadow var(--transition-base);
-  line-height: 1.3;
+  line-height: var(--lh-snug);
 
   &:hover,
   &:focus {
@@ -64,7 +63,7 @@
 
 .prRepo {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
+  font-size: var(--fs-body);
   color: var(--color-text);
 
   &::before {
@@ -82,17 +81,17 @@
 
 .prDesc {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: var(--fs-body);
   color: var(--color-text-muted);
 }
 
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (--mq-compact) {
+@media (--mq-until-sm) {
   .grid {
     grid-template-columns: 1fr;
   }

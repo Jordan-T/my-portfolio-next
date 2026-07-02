@@ -6,15 +6,15 @@ import SectionHeading from "@/components/ui/SectionHeading/SectionHeading";
 export default function Contact() {
   return (
     <Section id="contact">
-      <SectionHeading
-        number="06"
-        title="Prochaine étape&nbsp;: Construire la suite"
-      />
-      <p className={styles.sub}>
-        La réussite d&apos;un projet web repose sur des bases techniques saines
-        et une vision à long terme. Si vous cherchez à structurer vos
-        applications front-end, à optimiser vos performances ou à consolider vos
-        pratiques de développement, n&apos;hésitez pas à engager la discussion.
+      <SectionHeading number="06" title="Contact & Échanges" />
+      <p className={styles.content}>
+        Qu&apos;il faille structurer un projet (React, Vue, TypeScript), maintenir de
+        l&apos;existant (JavaScript, jQuery) ou s&apos;en passer totalement : mon approche
+        reste pragmatique. J&apos;interviens aussi pour accompagner vos développeurs
+        juniors et optimiser vos performances. Échangeons sur vos contraintes
+        réelles et vos objectifs. Vous pouvez prendre contact ici, que ce soit
+        pour analyser un besoin précis ou simplement autour d&apos;un café (sur Lille
+        ou en visio).
       </p>
       <ContactCard />
     </Section>

@@ -17,9 +17,8 @@ export default function HexagonImage({
   priority,
 }: Props) {
   // Inline style is the sanctioned escape hatch for a runtime value: the dynamic
-  // width feeds the `--width` custom property the CSS module reads. Not a
-  // hardcoded design token (those stay in CSS).
-  const sizeVar = { "--width": `${width}px` } as React.CSSProperties;
+  // width feeds `--hex-width` which the CSS module reads. Not a design token.
+  const sizeVar = { "--hex-width": `${width}px` } as React.CSSProperties;
   return (
     <div
       className={[styles.wrap, className].filter(Boolean).join(" ")}

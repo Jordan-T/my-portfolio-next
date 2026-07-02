@@ -21,14 +21,18 @@ const STATUS: Record<
   freelance: { label: "Disponible · Freelance", tone: "available" },
 };
 
-export default function ContactCard({ className }: { className?: string }) {
+export type ContactCardProps = {
+  className?: string;
+};
+
+export default function ContactCard({ className }: ContactCardProps) {
   const { availabilityStatus, socials, name, email, cvUrl } = siteConfig;
   const status = STATUS[availabilityStatus];
 
   return (
     <div className={[className, styles.card].filter(Boolean).join(" ")}>
       <aside className={styles.identity}>
-        <HexagonImage src="/Jordan-T-portrait.svg" alt="" width={132} />
+        <HexagonImage src="/Jordan-T-portrait.svg" alt="" width={175} />
         <div className={styles.asideContent}>
           <p className={styles.name}>{name}</p>
           <div className={styles.socials}>
@@ -60,7 +64,13 @@ export default function ContactCard({ className }: { className?: string }) {
         </p>
         <div className={styles.actions}>
           <Button href={`mailto:${email}`}>Me contacter</Button>
-          <Button href={cvUrl} variant="ghost">
+          <Button
+            href={cvUrl}
+            isLink
+            variant="secondary"
+            target="_blank"
+            rel="noopener"
+          >
             Télécharger le CV
           </Button>
         </div>

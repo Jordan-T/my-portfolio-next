@@ -10,9 +10,9 @@
   border: 1px solid var(--color-accent);
   font-family: var(--font-mono);
   color: var(--color-accent);
-  letter-spacing: 0.06em;
+  letter-spacing: var(--ls-cta);
   background: var(--color-bg);
-  font-size: 0.75rem;
+  font-size: var(--fs-label);
   border-radius: 0 0 var(--radius-xs) var(--radius-xs);
   /* Hidden above the viewport until keyboard focus. Pushed past -100%
      because some browsers still render a thin focus outline at exactly

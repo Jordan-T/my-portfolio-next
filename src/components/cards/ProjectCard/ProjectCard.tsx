@@ -4,15 +4,15 @@ import Tags from "@/components/ui/Tags/Tags";
 import Badge from "@/components/ui/Badge/Badge";
 import styles from "./ProjectCard.module.css";
 
-const STATUS_LABEL: Record<ProjectStatus, string> = {
+type VisibleProjectStatus = Exclude<ProjectStatus, "done">;
+
+const STATUS_LABEL: Record<VisibleProjectStatus, string> = {
   wip: "En cours",
-  done: "Terminé",
   client: "Client",
 };
 
-const STATUS_CLASS: Record<ProjectStatus, string> = {
+const STATUS_CLASS: Record<VisibleProjectStatus, string> = {
   wip: styles.statusWip,
-  done: styles.statusDone,
   client: styles.statusClient,
 };
 
@@ -30,9 +30,15 @@ export default function ProjectCard({ project }: { project: Project }) {
             {project.title}
           </Link>
         </h3>
-        <Badge className={STATUS_CLASS[project.status]}>
-          {STATUS_LABEL[project.status]}
-        </Badge>
+        {project.status !== "done" && (
+          <Badge
+            className={[styles.status, STATUS_CLASS[project.status]]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            {STATUS_LABEL[project.status]}
+          </Badge>
+        )}
       </div>
 
       <p className={styles.desc}>{project.description}</p>

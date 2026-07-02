@@ -31,7 +31,9 @@
 /* Visually hidden but keyboard-focusable checkbox (no-JS toggle). */
 .toggle {
   display: none;
-  position: absolute;
+  position: fixed;
+  top: 50vh;
+  left: -2rem;
   width: 0.0625rem;
   height: 0.0625rem;
   overflow: hidden;
@@ -68,7 +70,7 @@
 }
 
 .menu {
-  --menu-gap: clamp(var(--space-lg), 4vw, var(--space-3xl));
+  --menu-gap: clamp(var(--space-sm), 3.75vw, var(--space-3xl));
   display: flex;
   align-items: center;
   gap: var(--menu-gap);
@@ -91,7 +93,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  font-size: 0.8125rem;
+  font-size: var(--fs-small);
   color: var(--color-text);
   transition: color var(--transition-base);
 }
@@ -104,21 +106,7 @@
   color: var(--color-accent);
 }
 
-.cv {
-  padding: var(--space-xs) var(--space-md);
-  border: 1px solid var(--color-accent);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  color: var(--color-accent);
-  transition: background var(--transition-base);
-}
-
-.cv:hover {
-  background: var(--accent-wash);
-}
-
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .optionalLink {
     display: none;
   }
@@ -128,7 +116,7 @@
   }
 }
 
-@media (--mq-ui) {
+@media (--mq-until-md) {
   .toggle {
     display: inline-block;
   }
@@ -189,16 +177,10 @@
   }
 
   .links a {
-    font-size: 1rem;
+    font-size: var(--fs-body);
   }
 
   .optionalLink {
     display: block;
-  }
-
-  .cv {
-    margin-top: var(--space-md);
-    padding: var(--space-md) var(--space-2xl);
-    font-size: 0.875rem;
   }
 }

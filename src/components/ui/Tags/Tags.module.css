@@ -11,8 +11,8 @@
   padding: var(--space-2xs) var(--space-sm);
   border: 1px solid;
   border-radius: var(--radius-sm);
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
 }
 
 .tag::before {

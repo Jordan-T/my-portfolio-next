@@ -30,6 +30,14 @@ export default function Experience() {
                   ) : (
                     job.company
                   )}
+                  {job.companyInfo && (
+                    <>
+                      {" "}
+                      <span className={styles.companyInfo}>
+                        ({job.companyInfo})
+                      </span>
+                    </>
+                  )}
                 </span>
               </h3>
               <RangeDisplay startDate={job.startDate} endDate={job.endDate} />

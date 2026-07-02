@@ -8,7 +8,7 @@
 
 - **Server Components by default.** `"use client"` is forbidden unless strictly
   necessary (browser-only APIs, real interactivity). When unavoidable, the
-  directive must carry a one-line comment explaining *why* — this is checked by
+  directive must carry a one-line comment explaining _why_ — this is checked by
   [`perf-review`](../skills/perf-review/SKILL.md).
 - **Static export.** `next.config.ts` sets `output: "export"` with
   `images.unoptimized`. There is no server at runtime: no route handlers, no
@@ -18,7 +18,7 @@
 ## Layout & routing
 
 - `Nav` and `Footer` live in the root `src/app/layout.tsx`, never inside a page.
-- Routes: `/` (home), `/projects` + `/projects/[slug]`, `/veille`.
+- Routes: `/` (home), `/projects` + `/projects/[slug]`, `/resources`.
 - Route-segment styles sit beside the route as `<segment>.module.css`.
 
 ## Data layer
@@ -37,11 +37,11 @@
   Typed frontmatter: `title`, `description`, `status` (`wip|done|client`),
   `featured`, `tags` (`{ label, type }`), `date` (ISO `YYYY-MM-DD`, **always
   quoted**), optional `image`, optional `external`/`github`/`gitlab`, optional
-  `decision`, and `published` (default `true`; `false` hides it *and* skips the
+  `decision`, and `published` (default `true`; `false` hides it _and_ skips the
   build). Sort order: featured first, then newest date.
-- **Resources / "veille"** — a typed `Resource[]` in
+- **Resources / "resources"** — a typed `Resource[]` in
   `src/config/resources.ts`, each `article|video|book|talk|podcast|tool`, sorted
-  by `src/lib/resources.ts`. The route label stays French ("Veille"); all code
+  by `src/lib/resources.ts`. The route label stays French ("Resources"); all code
   identifiers use the English term **Resource**.
 - **Site & experience data** — personal info in `src/config/site.ts`, work
   history in `src/config/experience.ts`, the vision stack in

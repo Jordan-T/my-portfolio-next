@@ -5,6 +5,10 @@
 
 .featured {
   grid-column: 1 / -1;
+
+  + .card:last-child {
+    grid-column: 1 / -1;
+  }
 }
 
 .header {
@@ -16,7 +20,7 @@
 }
 
 .title {
-  font-size: 1.25rem;
+  font-size: var(--fs-title);
   font-weight: 700;
   color: var(--color-white);
 }
@@ -28,8 +32,8 @@
 }
 
 .desc {
-  font-size: 0.875rem;
-  line-height: 1.7;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 
@@ -38,7 +42,7 @@
   flex-direction: column;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-md);
-  margin: var(--space-md) 0;
+  margin: var(--space-lg) 0;
   border-left: 2px solid var(--alert-edge);
   background: var(--alert-wash);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -46,24 +50,27 @@
 
 .decisionLabel {
   font-family: var(--font-mono);
-  font-size: 0.625rem;
-  letter-spacing: 0.1em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--color-accent-alert);
 }
 
 .decision {
-  font-size: 0.8125rem;
-  line-height: 1.65;
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
   font-style: italic;
 }
 
 .tags {
-  margin-top: var(--space-md);
+  margin-top: var(--space-xl);
 }
 
 /* Status colors only; base pill shape comes from the Badge primitive. */
+.status {
+  margin-top: calc(var(--space-xs) * -1);
+}
 .statusWip {
   color: var(--status-wip-c);
   border-color: var(--status-wip-b);

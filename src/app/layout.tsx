@@ -66,6 +66,14 @@ if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/sw.js").catch(function () {});
 }`;
 
+const anchorClickHandlerScript = `
+document.addEventListener("click", function(e) {
+  var a = e.target.closest("a");
+  if (!a || a.origin !== location.origin || !a.hash || a.hash !== location.hash) return;
+  document.querySelector(a.hash)?.scrollIntoView({ behavior: "smooth" });
+});
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -88,6 +96,9 @@ export default function RootLayout({
         <Analytics />
         <script
           dangerouslySetInnerHTML={{ __html: serviceWorkerCleanupScript }}
+        />
+        <script
+          dangerouslySetInnerHTML={{ __html: anchorClickHandlerScript }}
         />
       </body>
     </html>

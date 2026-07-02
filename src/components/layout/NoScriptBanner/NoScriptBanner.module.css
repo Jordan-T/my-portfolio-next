@@ -4,8 +4,8 @@
   border-bottom: var(--border-width) solid var(--color-line);
   color: var(--color-text-muted);
   text-align: center;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
 }
 
 .highlight {

@@ -2,16 +2,17 @@ import type { Metadata } from "next";
 import PageHeader from "@/components/sections/PageHeader/PageHeader";
 import ResourceItem from "@/components/cards/ResourceItem/ResourceItem";
 import { getResources } from "@/lib/resources";
-import styles from "./veille.module.css";
+import styles from "./resources.module.css";
 import ContactCard from "@/components/cards/ContactCard/ContactCard";
 import Button from "@/components/ui/Button/Button";
+import Container from "@/components/ui/Container/Container";
 
 export const metadata: Metadata = {
-  title: "Veille",
-  description: "Liens et ressources suivis par Jordan Taisne.",
+  title: "Ressources",
+  description: "Liens & Ressources par Jordan Taisne.",
 };
 
-export default function VeillePage() {
+export default function ResourcesPage() {
   const resources = getResources();
 
   return (
@@ -22,17 +23,19 @@ export default function VeillePage() {
             Accueil
           </Button>
         }
-        eyebrow="Veille"
-        title="Ce que je lis, ce qui m'inspire"
+        eyebrow="Ressources"
+        title="Liens & Ressources"
       />
 
-      <div className={styles.grid}>
+      <Container className={styles.grid}>
         {resources.map((resource) => (
           <ResourceItem key={resource.id} resource={resource} />
         ))}
-      </div>
+      </Container>
 
-      <ContactCard className={styles.contactCard} />
+      <Container>
+        <ContactCard className={styles.contactCard} />
+      </Container>
     </div>
   );
 }

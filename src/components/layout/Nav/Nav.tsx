@@ -3,6 +3,7 @@ import Logo from "@/components/ui/Logo/Logo";
 import SocialIcon from "@/components/ui/SocialIcon/SocialIcon";
 import { siteConfig } from "@/config/site";
 import styles from "./Nav.module.css";
+import Button from "@/components/ui/Button/Button";
 
 type NavLink = {
   href: string;
@@ -23,17 +24,48 @@ document.getElementById("site-nav").addEventListener("click", function () {
 
 const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Accueil", optionalLink: true },
-  { href: "/#experience", label: "Expérience" },
-  { href: "/projects", label: "Projets" },
-  { href: "/veille", label: "Veille" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/#projects", label: "Réalisations" },
+  { href: "/#experience", label: "Parcours" },
+  { href: "/#resources", label: "Ressources", optionalLink: true },
   {
     href: "https://labs.jordan-t.dev",
     label: "Laboratoire",
     rel: "noopener",
     external: true,
   },
+  {
+    href: siteConfig.cvUrl,
+    label: "CV",
+    rel: "noopener",
+    external: true,
+  },
 ];
+
+function NavLink({ link }: { link: NavLink }) {
+  const LinkEl = link.external ? "a" : Link;
+
+  return (
+    <LinkEl
+      href={link.href}
+      target={link.external ? "_blank" : undefined}
+      rel={link.rel}
+      aria-label={
+        link.external
+          ? `${link.label} (site externe, nouvel onglet)`
+          : undefined
+      }
+    >
+      {link.label}
+      {link.external && (
+        <SocialIcon
+          className={styles.externalIcon}
+          label="External"
+          size={14}
+        />
+      )}
+    </LinkEl>
+  );
+}
 
 export default function Nav() {
   return (
@@ -58,40 +90,16 @@ export default function Nav() {
           {NAV_LINKS.map((link) => (
             <li
               key={link.href}
-              className={
-                link.optionalLink ? styles.optionalLink : undefined
-              }
+              className={link.optionalLink ? styles.optionalLink : undefined}
             >
-              <Link
-                href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.rel}
-                aria-label={
-                  link.external
-                    ? `${link.label} (site externe, nouvel onglet)`
-                    : undefined
-                }
-              >
-                {link.label}
-                {link.external && (
-                  <SocialIcon
-                    className={styles.externalIcon}
-                    label="External"
-                    size={14}
-                  />
-                )}
-              </Link>
+              <NavLink link={link} />
             </li>
           ))}
         </ul>
-        <a
-          className={styles.cv}
-          href={siteConfig.cvUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CV
-        </a>
+
+        <Button variant="primary" size="small" href="/#contact">
+          Contact
+        </Button>
       </nav>
 
       <script dangerouslySetInnerHTML={{ __html: closeMobileMenuScript }} />

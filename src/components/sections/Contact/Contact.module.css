@@ -1,5 +1,5 @@
-.sub {
-  font-size: 1.0625rem;
+.content {
+  font-size: var(--fs-lead);
   color: var(--color-text-muted);
   margin-bottom: var(--space-2xl);
 }

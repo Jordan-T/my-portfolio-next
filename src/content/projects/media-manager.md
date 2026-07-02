@@ -9,10 +9,6 @@ decision: "Architecture découplée Tauri + Rust pour le moteur d'indexation, Re
 tags:
   - label: "Tauri"
     type: "framework"
-  - label: "React"
-    type: "framework"
-  - label: "Axum"
-    type: "framework"
   - label: "Rust"
     type: "language"
   - label: "TypeScript"

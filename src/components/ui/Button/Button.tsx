@@ -2,32 +2,40 @@ import Link from "next/link";
 import styles from "./Button.module.css";
 
 interface ButtonProps {
-  variant?: "primary" | "link" | "ghost" | "back";
+  variant?: "primary" | "secondary" | "link" | "back";
+  size?: "small";
   href?: string;
-  /** Opens in a new tab — only meaningful when href is set. */
-  newTab?: boolean;
+  rel?: string;
+  target?: string;
+  isLink?: boolean;
   children: React.ReactNode;
   className?: string;
 }
 
 export default function Button({
   variant = "primary",
+  size,
   href,
-  newTab = false,
+  isLink,
   children,
   className,
+  ...props
 }: ButtonProps) {
-  const cls = [styles.btn, styles[variant], className]
+  const cls = [
+    styles.btn,
+    styles[variant],
+    size ? styles[size] : undefined,
+    className,
+  ]
     .filter(Boolean)
     .join(" ");
 
-  if (href && (href.startsWith("http") || href.startsWith("mailto"))) {
+  if (
+    href &&
+    (isLink || href.startsWith("http") || href.startsWith("mailto"))
+  ) {
     return (
-      <a
-        href={href}
-        className={cls}
-        {...(newTab ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      >
+      <a href={href} className={cls} {...props}>
         {children}
       </a>
     );
@@ -35,14 +43,14 @@ export default function Button({
 
   if (href) {
     return (
-      <Link href={href} className={cls}>
+      <Link href={href} className={cls} {...props}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button type="button" className={cls}>
+    <button type="button" className={cls} {...props}>
       {children}
     </button>
   );

@@ -40,9 +40,8 @@ export default function Vision() {
 
         <BentoCard label="Contributions" wide>
           <p className={styles.soWhat}>
-            Contributions à l&apos;écosystème open source : la veille technique
-            qui
-            se traduit en code.
+            Contributions à l&apos;écosystème open source : la resources
+            technique qui se traduit en code.
           </p>
           <ul className={styles.prList}>
             {CONTRIBUTIONS.map((contribution) => (

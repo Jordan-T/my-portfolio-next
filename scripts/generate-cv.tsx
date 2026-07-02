@@ -415,7 +415,7 @@ async function main() {
     qrWithBadge(cv.url),
   ]);
 
-  const out = path.join(ROOT, "public", "cv.pdf");
+  const out = path.join(ROOT, "public", "cv-jordan-t.pdf");
   await mkdir(path.dirname(out), { recursive: true });
   await renderToFile(<Cv assets={{ portrait, qr }} />, out);
   console.log(`✓ CV généré : ${path.relative(ROOT, out)}`);

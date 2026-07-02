@@ -1,3 +1,4 @@
+import Container from "@/components/ui/Container/Container";
 import styles from "./PageHeader.module.css";
 
 interface PageHeaderProps {
@@ -22,7 +23,7 @@ export default function PageHeader({
   const cls = [styles.section, className].filter(Boolean).join(" ");
   return (
     <section className={cls}>
-      <div className={styles.container}>
+      <Container className={styles.container}>
         <div className={styles.main}>
           {back && <div className={styles.back}>{back}</div>}
           {eyebrow && <div className={styles.eyebrow}>{eyebrow}</div>}
@@ -36,7 +37,7 @@ export default function PageHeader({
             {aside || null}
           </div>
         )}
-      </div>
+      </Container>
     </section>
   );
 }

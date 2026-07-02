@@ -4,6 +4,6 @@
   padding: var(--space-2xs) var(--space-sm);
   border: 1px solid;
   border-radius: var(--radius-pill);
-  font-size: 0.6875rem;
-  letter-spacing: 0.08em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
 }
