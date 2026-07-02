@@ -17,10 +17,12 @@ type NavLink = {
 // SPA routing keeps the Nav mounted, so #nav-toggle stays checked after use;
 // reset it on any click inside the menu (link or overlay backdrop) to close it.
 const closeMobileMenuScript = `
-document.getElementById("site-nav").addEventListener("click", function () {
-  var toggle = document.getElementById("nav-toggle");
-  if (toggle) toggle.checked = false;
-});`;
+setTimeout(function() {
+  document.getElementById("site-nav").addEventListener("click", function () {
+    var toggle = document.getElementById("nav-toggle");
+    if (toggle) toggle.checked = false;
+  });
+}, 0);`;
 
 const NAV_LINKS: NavLink[] = [
   { href: "/", label: "Accueil", optionalLink: true },

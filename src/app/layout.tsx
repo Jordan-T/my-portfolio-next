@@ -67,11 +67,13 @@ if ("serviceWorker" in navigator) {
 }`;
 
 const anchorClickHandlerScript = `
-document.addEventListener("click", function(e) {
-  var a = e.target.closest("a");
-  if (!a || a.origin !== location.origin || !a.hash || a.hash !== location.hash) return;
-  document.querySelector(a.hash)?.scrollIntoView({ behavior: "smooth" });
-});
+setTimeout(function() {
+  document.addEventListener("click", function(e) {
+    var a = e.target.closest("a");
+    if (!a || a.origin !== location.origin || !a.hash || a.hash !== location.hash) return;
+    document.querySelector(a.hash)?.scrollIntoView({ behavior: "smooth" });
+  });
+}, 0);
 `;
 
 export default function RootLayout({
