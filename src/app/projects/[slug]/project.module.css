@@ -1,13 +1,13 @@
 .desc {
-  font-size: 1.125rem;
+  font-size: var(--fs-lead);
   color: var(--color-text-muted);
   margin-bottom: var(--space-lg);
 }
 
 .date {
   margin-bottom: var(--space-lg);
-  font-size: 0.8125rem;
-  letter-spacing: 0.08em;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--color-text-muted);
 }
@@ -26,9 +26,7 @@
   flex-direction: row-reverse;
   justify-content: center;
   gap: var(--space-3xl);
-  max-width: var(--maxw);
   margin: var(--space-3xl) auto var(--space-4xl);
-  padding: 0 var(--gutter);
 }
 
 .body {
@@ -44,15 +42,15 @@
   padding: var(--space-sm) 0 var(--space-sm) var(--space-lg);
   border-left: 2px solid var(--accent-edge);
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--fs-small);
   position: sticky;
   top: calc(var(--header-height) + var(--space-md));
 }
 
 .tocTitle {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.1em;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--color-accent);
   margin: 0 0 var(--space-sm);
@@ -68,7 +66,7 @@
   }
 }
 
-@media (--mq-until-desk) {
+@media (--mq-until-xl) {
   .toc {
     display: none;
   }
@@ -84,7 +82,7 @@
   border-left: 2px solid var(--border-color);
   background: var(--color-surface);
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-  font-size: 0.8125rem;
+  font-size: var(--fs-small);
 
   &:first-child {
     margin-top: calc(var(--card-gutter) / -2);
@@ -94,9 +92,9 @@
 .takeawaysLabel,
 .decisionLabel {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--fs-small);
   font-weight: 400;
-  letter-spacing: 0.1em;
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--title-color);
   margin: 0 0 var(--space-sm);
@@ -112,14 +110,14 @@
 }
 
 .decision {
-  font-size: 0.8125rem;
-  line-height: 1.65;
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
   font-style: italic;
   margin: 0;
 }
 
-@media (--mq-ui) {
+@media (--mq-until-md) {
   .decisionBlock,
   .takeawaysBlock {
     --card-gutter: var(--gutter);

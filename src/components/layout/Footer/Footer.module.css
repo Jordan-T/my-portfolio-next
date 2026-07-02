@@ -7,7 +7,7 @@
   background: var(--color-bg);
   border-top: 1px solid var(--border-accent-soft);
   text-align: center;
-  font-size: 0.75rem;
+  font-size: var(--fs-label);
   color: var(--color-text-muted);
   font-family: var(--font-mono);
 }

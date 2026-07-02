@@ -20,8 +20,6 @@ tags:
     type: "language"
   - label: "CSS Modules"
     type: "tool"
-  - label: "MDX"
-    type: "tool"
   - label: "Performance"
     type: "concept"
   - label: "Accessibilité"

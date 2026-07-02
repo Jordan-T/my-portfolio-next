@@ -8,14 +8,14 @@
 
 .label {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
-  letter-spacing: 0.08em;
+  font-size: var(--fs-small);
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: var(--space-sm);
 }
 
-@media (--mq-compact) {
+@media (--mq-until-sm) {
   .wide {
     grid-column: span 1;
   }

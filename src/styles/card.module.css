@@ -1,6 +1,5 @@
 .surface {
   --border: var(--border-subtle);
-  display: block;
   padding: var(--space-xl);
   background: var(--color-surface);
   border: 1px solid var(--border);

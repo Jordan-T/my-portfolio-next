@@ -22,6 +22,6 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: var(--lh-tight);
   color: var(--color-white);
 }

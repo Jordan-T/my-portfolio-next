@@ -7,10 +7,10 @@ as the work it presents.
 ## What it is
 
 - A static site built with Next.js (App Router) and exported to plain HTML/CSS.
-- Content-driven: projects and a curated "veille" (tech-watch) are authored as
+- Content-driven: projects and a curated "resources" (tech-watch) are authored as
   Markdown/MDX and read at build time — no CMS, no database, no runtime backend.
 - Three public surfaces: the home page (hero, vision, projects, experience,
-  veille, contact), the projects index + per-project detail, and the veille.
+  resources, contact), the projects index + per-project detail, and the resources.
 
 ## Goals that drive every decision
 
@@ -36,10 +36,10 @@ remove the noindex (and confirm `metadataBase`) when the site goes live.
 
 ## Where things live
 
-| Concern | File |
-|---|---|
-| Architecture & data flow | [`architecture.md`](./architecture.md) |
-| Code & content conventions | [`conventions.md`](./conventions.md) |
+| Concern                       | File                                     |
+| ----------------------------- | ---------------------------------------- |
+| Architecture & data flow      | [`architecture.md`](./architecture.md)   |
+| Code & content conventions    | [`conventions.md`](./conventions.md)     |
 | Design tokens & styling rules | [`design-system.md`](./design-system.md) |
-| Reusable agent skills | [`../skills/`](../skills/) |
-| Architecture decisions (ADRs) | [`../decisions/`](../decisions/) |
+| Reusable agent skills         | [`../skills/`](../skills/)               |
+| Architecture decisions (ADRs) | [`../decisions/`](../decisions/)         |

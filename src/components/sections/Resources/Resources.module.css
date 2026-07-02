@@ -1,3 +1,7 @@
+.card {
+  margin-block: var(--space-4xl);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -10,8 +14,14 @@
   margin: var(--space-2xl) auto 0;
 }
 
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (--mq-until-sm) {
+  .card {
+    margin-block: 0;
   }
 }

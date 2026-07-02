@@ -10,7 +10,7 @@
   margin: var(--space-2xl) auto 0;
 }
 
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .grid {
     grid-template-columns: 1fr;
   }

@@ -21,7 +21,7 @@
 /build
 
 # generated at build (prebuild → scripts/generate-cv.tsx)
-/public/cv.pdf
+/public/cv-jordan-t.pdf
 
 # generated at build (prebuild → scripts/generate-portrait.ts)
 /public/generated/

@@ -6,8 +6,32 @@
    postcss-custom-media, and injected into every CSS module via
    @csstools/postcss-global-data. Define a breakpoint once here and
    reuse it everywhere — never repeat a literal width in a @media.
+
+   Scale (rem — respects user zoom / default font size):
+     sm 37.5rem (600)  md 45rem (720)  lg 56.25rem (900)  xl 73.75rem (1180)
+
+   Three directions per breakpoint. Pick the one whose base is the value
+   you'd keep on the SMALLEST screen, so you never set-then-reset:
+     --mq-from-*   min-width  → add desktop-side behaviour on a mobile base
+     --mq-until-*  max-width  → override / strip on a desktop base
+     --mq-only-*   range      → a single band (e.g. tablet)
+
+   Range syntax (width >= …) is exclusive by construction, so from-X and
+   until-X partition cleanly at X — no ±1px overlap. Baseline 2023, native:
+   postcss-custom-media just inlines the string, nothing is compiled away.
    ============================================================ */
-@custom-media --mq-until-desk (max-width: 1180px); /* below --maxw */
-@custom-media --mq-grid (max-width: 900px); /* multi-column grid reflow */
-@custom-media --mq-ui (max-width: 720px); /* UI switch: burger menu, reduced gutter */
-@custom-media --mq-compact (max-width: 600px); /* compact mobile, grids → 1 col */
+
+/* mobile-first (min-width) — add behaviour on the desktop side, no reset */
+@custom-media --mq-from-sm (width >= 37.5rem);
+@custom-media --mq-from-md (width >= 45rem);
+@custom-media --mq-from-lg (width >= 56.25rem);
+@custom-media --mq-from-xl (width >= 73.75rem);
+
+/* desktop-first (max-width) — override / strip on a desktop base */
+@custom-media --mq-until-sm (width < 37.5rem);
+@custom-media --mq-until-md (width < 45rem);
+@custom-media --mq-until-lg (width < 56.25rem);
+@custom-media --mq-until-xl (width < 73.75rem);
+
+/* bands — add on demand (YAGNI) */
+@custom-media --mq-only-md (45rem <= width < 56.25rem);

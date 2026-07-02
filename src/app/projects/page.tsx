@@ -5,10 +5,11 @@ import { getAllProjects } from "@/lib/projects";
 import styles from "./projects.module.css";
 import Button from "@/components/ui/Button/Button";
 import ContactCard from "@/components/cards/ContactCard/ContactCard";
+import Container from "@/components/ui/Container/Container";
 
 export const metadata: Metadata = {
   title: "Projets",
-  description: "Sélection de projets de Jordan Taisne.",
+  description: "Architecture & Réalisations de Jordan Taisne.",
 };
 
 export default function ProjectsPage() {
@@ -23,16 +24,18 @@ export default function ProjectsPage() {
           </Button>
         }
         eyebrow="Projets"
-        title="Ce sur quoi je travaille"
+        title="Architecture & Réalisations"
       />
 
-      <div className={styles.grid}>
+      <Container className={styles.grid}>
         {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
-      </div>
+      </Container>
 
-      <ContactCard className={styles.contactCard} />
+      <Container>
+        <ContactCard className={styles.contactCard} />
+      </Container>
     </div>
   );
 }

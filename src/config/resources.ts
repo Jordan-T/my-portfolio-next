@@ -96,7 +96,7 @@ export const resources: Resource[] = [
     date: "2022",
     level: "interesting",
     comment:
-      "Jake Archibald et Surma discutent du web platform dans le détail, sans survendre. Là où Supercharged était centré perf, HTTP 203 ratisse plus large : APIs récentes, comportements subtils du navigateur. Une veille honnête.",
+      "Jake Archibald et Surma discutent du web platform dans le détail, sans survendre. Là où Supercharged était centré perf, HTTP 203 ratisse plus large : APIs récentes, comportements subtils du navigateur. Une resources honnête.",
   },
   {
     id: "view-transitions-api",

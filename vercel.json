@@ -1,9 +1,17 @@
 {
   "outputDirectory": "out",
   "cleanUrls": true,
+  "redirects": [
+    { "source": "/veille", "destination": "/resources", "permanent": true },
+    { "source": "/cv.pdf", "destination": "/cv-jordan-t.pdf", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/sw.js",
+      "headers": [{ "key": "Cache-Control", "value": "no-store, max-age=0" }]
+    },
+    {
+      "source": "/cv-jordan-t.pdf",
       "headers": [{ "key": "Cache-Control", "value": "no-store, max-age=0" }]
     }
   ]

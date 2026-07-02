@@ -3,13 +3,12 @@ title: "At Work TP"
 description: "Site vitrine pour une entreprise de travaux publics."
 status: "client"
 featured: false
+published: false
 date: "2023-09-01"
 decision: "SSR pur Nuxt 3 avec animations scroll gérées nativement en CSS. Résultat : Core Web Vitals maximisés (SEO local critique pour le client), zéro dépendance JS d'animation."
 external: "https://at-work-nuxt.vercel.app/"
 tags:
   - label: "Nuxt 3"
-    type: "framework"
-  - label: "Vue 3"
     type: "framework"
   - label: "TypeScript"
     type: "language"

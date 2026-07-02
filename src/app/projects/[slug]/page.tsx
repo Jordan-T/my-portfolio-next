@@ -13,6 +13,7 @@ import styles from "./project.module.css";
 import Button from "@/components/ui/Button/Button";
 import { slugify } from "@/lib/slugify";
 import ContactCard from "@/components/cards/ContactCard/ContactCard";
+import Container from "@/components/ui/Container/Container";
 
 /** Flattens a React node to its plain text, so a heading id matches the slug used in the table of contents. */
 function toText(node: ReactNode): string {
@@ -139,7 +140,7 @@ export default async function ProjectPage({
         <Tags tags={project.tags} />
       </PageHeader>
 
-      <div className={styles.main}>
+      <Container className={styles.main}>
         {headings.length > 0 ? (
           <nav className={styles.toc} aria-labelledby="toc-title">
             <p id="toc-title" className={styles.tocTitle}>
@@ -188,9 +189,11 @@ export default async function ProjectPage({
           )}
           {MDXContent ? <MDXContent components={mdxComponents} /> : null}
         </div>
-      </div>
+      </Container>
 
-      <ContactCard className={styles.contactCard} />
+      <Container>
+        <ContactCard className={styles.contactCard} />
+      </Container>
     </article>
   );
 }

@@ -23,8 +23,8 @@
 }
 
 .category {
-  font-size: 0.6875rem;
-  letter-spacing: 0.12em;
+  font-size: var(--fs-label);
+  letter-spacing: var(--ls-label);
   text-transform: uppercase;
   color: var(--color-accent);
 }
@@ -32,25 +32,25 @@
 .type {
   padding: var(--space-2xs) var(--space-xs);
   border-color: var(--tag-tool-b);
-  font-size: 0.625rem;
+  font-size: var(--fs-label);
   text-transform: uppercase;
   color: var(--tag-tool-c);
 }
 
 .title {
-  font-size: 0.875rem;
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
   color: var(--color-text);
 }
 
 .comment {
-  font-size: 0.8125rem;
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 
 .source {
-  font-size: 0.75rem;
+  font-size: var(--fs-label);
   color: var(--color-text-muted);
 }
 

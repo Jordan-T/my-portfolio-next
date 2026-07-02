@@ -1,3 +1,4 @@
+import Container from "../Container/Container";
 import styles from "./Section.module.css";
 
 interface SectionProps {
@@ -22,7 +23,7 @@ export default function Section({
     .join(" ");
   return (
     <section id={id} className={cls}>
-      {children}
+      <Container>{children}</Container>
     </section>
   );
 }

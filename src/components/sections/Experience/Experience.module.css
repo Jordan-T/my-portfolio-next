@@ -9,17 +9,23 @@
   border-left: 2px solid var(--color-line);
 }
 
+.companyInfo {
+  display: inline-block;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
 .head {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: var(--space-xs);
+  gap: var(--space-xs) var(--space-lg);
   margin-bottom: var(--space-sm);
 }
 
 .role {
-  font-size: 1.25rem;
+  font-size: var(--fs-title);
   font-weight: 400;
   color: var(--color-text);
 }
@@ -44,7 +50,7 @@
 
 .range {
   font-family: var(--font-mono);
-  font-size: 0.8125rem;
+  font-size: var(--fs-small);
   color: var(--color-text-muted);
 }
 
@@ -62,8 +68,8 @@
 .highlights li {
   position: relative;
   padding-left: var(--space-lg);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 

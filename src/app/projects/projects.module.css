@@ -2,12 +2,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
-  max-width: var(--maxw);
-  margin: 0 auto;
-  padding: var(--space-3xl) var(--gutter);
+  margin-block: var(--space-4xl);
 }
 
-@media (--mq-grid) {
+@media (--mq-until-lg) {
   .grid {
     grid-template-columns: 1fr;
   }

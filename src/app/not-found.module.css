@@ -35,13 +35,13 @@
 }
 
 .title {
-  font-size: 2rem;
-  line-height: 1.15;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-tight);
 }
 
 .desc {
   max-width: 32rem;
-  line-height: 1.7;
+  line-height: var(--lh-normal);
   color: var(--color-text-muted);
 }
 
@@ -51,10 +51,4 @@
   gap: var(--space-md);
   justify-content: center;
   margin-top: var(--space-sm);
-}
-
-@media (--mq-compact) {
-  .title {
-    font-size: 1.5rem;
-  }
 }

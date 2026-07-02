@@ -14,8 +14,6 @@ external: "https://labs.jordan-t.dev"
 tags:
   - label: "Astro"
     type: "framework"
-  - label: "Preact"
-    type: "framework"
   - label: "TypeScript"
     type: "language"
   - label: "MDX"

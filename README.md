@@ -36,10 +36,10 @@ pnpm format       # Prettier
 
 ```
 src/
-  app/          # routes (App Router) — home, projects, veille
+  app/          # routes (App Router) — home, projects, resources
   components/   # ui/ · cards/ · sections/ · layout/
   config/       # site, experience, stack, theme, resources, contributions
-  content/      # projects (.md/.mdx) and the veille (links)
+  content/      # projects (.md/.mdx) and the resources (links)
   lib/          # data layer: reads & types content (testable, injectable)
   styles/       # global tokens + shared CSS bases
   types/        # shared TypeScript types
