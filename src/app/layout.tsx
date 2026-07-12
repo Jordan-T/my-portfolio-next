@@ -24,13 +24,6 @@ const inter = Inter({
   weight: ["400", "700"],
 });
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  display: "swap",
-  weight: ["400"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://jordan-t.dev"),
   title: {
@@ -84,7 +77,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${geist.variable} ${inter.variable} ${spaceGrotesk.variable}`}
+      className={`${geist.variable} ${inter.variable}`}
       data-scroll-behavior="smooth"
     >
       <body className="bg-grid-1">

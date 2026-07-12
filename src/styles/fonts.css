@@ -1,8 +1,8 @@
 /* ============================================================
    Typography — "Engineering & Blueprint" direction
    Font families are loaded via next/font/google in
-   src/app/layout.tsx, which exposes --font-geist, --font-inter and
-   --font-space-grotesk on <html>. We map them here to semantic
+   src/app/layout.tsx, which exposes --font-geist and
+   --font-inter on <html>. We map them here to semantic
    tokens consumed everywhere (never hardcode the family name).
    ============================================================ */
 :root {
@@ -10,8 +10,8 @@
     var(--font-geist), "Geist", "Outfit", sans-serif; /* headings */
   --font-body: var(--font-inter), "Inter", "DM Sans", sans-serif; /* body */
   --font-mono:
-    var(--font-space-grotesk), "Space Grotesk", "JetBrains Mono", ui-monospace,
-    "Fira Code", monospace; /* tags, code, technical accents */
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace; /* tags, code, technical accents */
 }
 
 h1,
