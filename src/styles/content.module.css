@@ -3,10 +3,10 @@
   line-height: var(--lh-relaxed);
   color: var(--color-text-muted);
 
-  p,
-  ul,
-  ol,
-  hr {
+  > p,
+  > ul,
+  > ol,
+  > hr {
     font-size: 1em;
 
     &:not(:last-child) {
@@ -14,16 +14,22 @@
     }
   }
 
-  p {
+  > p {
     font-size: 1em;
     line-height: var(--lh-relaxed);
   }
 
-  hr {
+  > hr {
     border: none;
     height: var(--border-width);
     background: var(--color-line);
     margin: var(--space-md) 0;
+  }
+}
+
+.contentBlock {
+  &:not(:last-child) {
+    margin-bottom: var(--space-md);
   }
 }
 

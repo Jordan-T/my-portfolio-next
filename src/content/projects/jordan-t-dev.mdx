@@ -10,7 +10,7 @@ takeaways:
   - "Migration de Gatsby vers Next.js App Router : la plateforme a rattrapé ce qui justifiait Gatsby, et la maintenance devenait trop coûteuse."
   - "React Server Components par défaut et approche CSS-First : le JavaScript client est traité comme un budget, pas comme un acquis."
   - "Le site reste navigable sans aucun JavaScript, et l'accessibilité (clavier, focus, mouvement réduit) a été conçue dès le départ."
-  - "Résultat : Lighthouse 99/100/100 sur mobile, avec un Total Blocking Time à 0 ms et zéro décalage de mise en page."
+  - "Résultat : Lighthouse 100/100/100 sur mobile, avec un Total Blocking Time à 20 ms et zéro décalage de mise en page."
 external: "https://jordan-t.dev"
 github: "https://github.com/Jordan-T/my-portfolio-next"
 tags:
@@ -66,19 +66,46 @@ Le soin va jusqu'à l'impression du CV. Plutôt que d'empiler des surcharges CSS
 
 Pour vérifier ces arbitrages, les mesures comptent autant que les intentions. Sur Lighthouse, en émulation mobile (Moto G Power, 4G lente) :
 
-- **Performances :** 99
-- **Accessibilité :** 100
-- **Bonnes pratiques :** 100
-- **First Contentful Paint :** 0,9 s
-- **Largest Contentful Paint :** 2,0 s
-- **Total Blocking Time :** 0 ms
-- **Cumulative Layout Shift :** 0
-- **Speed Index :** 0,9 s
+<LighthouseScores
+  title="Scores jordan-t.dev V1 mobile"
+  performance={86}
+  accessibility={99}
+  bestPractices={96}
+  seo={100}
+  fcp={0.9}
+  lcp={4.2}
+  tbt={0}
+  cls={0.009}
+  speedIndex={1.7}
+/>
 
-Le TBT à 0 ms et le CLS à 0 sont les deux chiffres qui résument la démarche : le thread principal n'est jamais bloqué par du JavaScript au démarrage, et rien ne saute à l'écran pendant le chargement. C'est la conséquence directe du « JS est un budget ».
+<LighthouseScores
+  title="Scores jordan-t.dev V2 mobile"
+  performance={100}
+  accessibility={100}
+  bestPractices={100}
+  seo={100}
+  fcp={1}
+  lcp={1.9}
+  tbt={20}
+  cls={0}
+  speedIndex={1}
+/>
+
+Le CLS à 0 confirme qu'aucune mise en page ne bouge pendant le chargement. Le TBT à 20 ms, lui, mérite une nuance. Ce chiffre n'est pas nul, et il ne le sera jamais avec ce choix technique. Une partie vient du runtime Turbopack, incompressible dès qu'on utilise un bundler de modules.
+
+Astro aurait sans doute produit un TBT plus bas, grâce à une architecture en îlots sans ce runtime. Mais il n'apporte pas nativement le préchargement des liens ni les mêmes optimisations par défaut. Next.js les inclut, et s'appuie sur un écosystème largement adopté : Server Components, et d'autres possibilités si le projet évolue. « JS est un budget » ne veut pas dire JS à zéro. Ça veut dire accepter un coût mesuré, en échange de ce qu'il permet.
 
 Je croise aussi avec GTmetrix, qui note Grade A (100 % en performance, 99 % en structure) et apporte d'autres angles utiles comme le waterfall réseau. Croiser deux outils évite de s'enfermer dans un seul référentiel.
 
+## L'IA, sans dette de conception
+
+**Contexte :** Le marché redéfinit les attentes envers notre métier. Didier Girard (Studio Devoxx 2025) note que des entreprises comme Sfeir ciblent désormais les développeurs augmentés par l'IA. L'écriture du code n'est plus le véritable goulot d'étranglement, le défi se déplace vers la conception de systèmes solides. Nathan Menard rappelle cependant une limite fondamentale : la machine ne porte ni la vision produit, ni l'intuition métier, ni la responsabilité du résultat.
+
+**Décision :** J'ai structuré ce portfolio pour encadrer l'IA, traitée ici comme un exécutant, pas un décideur. Le dossier de configuration est volontairement nommé `.ai`, et non `.claude`, pour éviter tout enfermement technologique. Il impose un cadre technique rigoureusement défini et documenté en Markdown. La machine lit ces directives agnostiques pour s'imprégner des règles du projet. Je conserve le rôle d'architecte et je valide manuellement chaque ligne proposée.
+
+**Conséquence et compromis :** Le temps gagné sur la saisie de code standard est réinvesti dans l'exigence architecturale, pas dans le confort. Le compromis direct reste le niveau d'attention requis lors de la revue. Diriger une IA demande un effort de documentation lourd et une vigilance constante. Sans cette rigueur, on retombe exactement dans ce que Topçu et Chevalier décrivent comme la dette de conception : des décisions d'architecture prises sous pression, invisibles dans le code, mais qui contraignent tout ce qui suit. La documentation `.ai` reste valide même si le modèle de langage change, ce qui garde cette indépendance technologique dans la durée.
+
 ---
 
-_Ce projet est vivant et open-source. Si vous repérez un axe d'amélioration, un comportement inattendu, ou si vous voulez simplement échanger sur ces choix d'architecture, n'hésitez pas à ouvrir une issue sur le dépôt._
+_Ce projet est vivant et open-source. Si vous repérez un axe d'amélioration, un comportement inattendu, ou si vous voulez simplement échanger sur ces choix d'architecture, n'hésitez pas à ouvrir une issue sur le dépôt [Jordan-T/my-portfolio-next](https://github.com/Jordan-T/my-portfolio-next)._

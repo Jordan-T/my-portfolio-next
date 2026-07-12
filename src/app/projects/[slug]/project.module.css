@@ -124,6 +124,10 @@
   }
 }
 
+.contentBlockCard {
+  margin-inline: max(calc(var(--space-lg) * -1), calc(var(--gutter) / -3 * 2));
+}
+
 .contactCard {
   margin-block: var(--space-4xl);
 }

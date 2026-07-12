@@ -19,6 +19,8 @@ export interface BrandPalette {
   accentAlert: string;
   /** green-500, signals positive availability (contact badge). */
   accentSuccess: string;
+  /** red-500, signals a failure/poor state (e.g. Lighthouse gauges). */
+  accentDanger: string;
   text: string;
   textMuted: string;
   white: string;
@@ -37,6 +39,7 @@ export const brand: BrandPalette = {
   accent2: "#6366f1",
   accentAlert: "#f59e0b",
   accentSuccess: "#22c55e",
+  accentDanger: "#ef4444",
   text: "#ededed",
   textMuted: "#94a3b8",
   textRaised: "#fff",
@@ -69,6 +72,7 @@ export function siteColors(p: BrandPalette = brand): Record<string, string> {
     "--color-accent2": p.accent2,
     "--color-accent-alert": p.accentAlert,
     "--color-accent-success": p.accentSuccess,
+    "--color-accent-danger": p.accentDanger,
 
     // Text
     "--color-text": p.text,

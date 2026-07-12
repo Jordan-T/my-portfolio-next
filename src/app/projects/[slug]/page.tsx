@@ -3,6 +3,9 @@ import { isValidElement, type ReactNode } from "react";
 import { notFound } from "next/navigation";
 import HexagonImage from "@/components/ui/HexagonImage/HexagonImage";
 import HexButton from "@/components/ui/HexButton/HexButton";
+import LighthouseScores, {
+  LighthouseScoresProps,
+} from "@/components/ui/LighthouseScores/LighthouseScores";
 import PageHeader from "@/components/sections/PageHeader/PageHeader";
 import SocialIcon from "@/components/ui/SocialIcon/SocialIcon";
 import Tags from "@/components/ui/Tags/Tags";
@@ -39,6 +42,14 @@ const mdxComponents = {
   ),
   ul: (props: React.ComponentProps<"ul">) => (
     <ul {...props} className={contentStyles.list} />
+  ),
+  LighthouseScores: (props: LighthouseScoresProps) => (
+    <LighthouseScores
+      {...props}
+      className={[contentStyles.contentBlock, styles.contentBlockCard].join(
+        " ",
+      )}
+    />
   ),
 };
 
