@@ -285,8 +285,8 @@ interface Assets {
   qr: string;
 }
 
-function Cv({ assets }: { assets: Assets }) {
-  const cv = getCvData();
+function Cv({ assets, phone }: { assets: Assets; phone?: string }) {
+  const cv = getCvData({ phone });
   const siteLabel = cv.url.replace(/^https?:\/\//, "");
 
   return (
@@ -310,6 +310,9 @@ function Cv({ assets }: { assets: Assets }) {
             <Text style={styles.sideHeading}>Contact</Text>
             <Text style={styles.sideText}>{cv.location}</Text>
             <Text style={styles.sideStrong}>{cv.email}</Text>
+            {cv.phone ? (
+              <Text style={styles.sideStrong}>{cv.phone}</Text>
+            ) : null}
             <Text style={styles.sideStrong}>{siteLabel}</Text>
 
             <View style={styles.sideBlock}>
@@ -407,17 +410,34 @@ function Cv({ assets }: { assets: Assets }) {
   );
 }
 
+// Reads `--phone=0612345678`, `--phone 0612345678`, or
+// `--phone "+33 6 12 34 56 78"` from argv.
+function readPhoneArg(argv: string[]): string | undefined {
+  const eqArg = argv.find((arg) => arg.startsWith("--phone="));
+  if (eqArg) return eqArg.slice("--phone=".length) || undefined;
+
+  const flagIndex = argv.indexOf("--phone");
+  if (flagIndex !== -1) return argv[flagIndex + 1];
+
+  return undefined;
+}
+
 async function main() {
   registerFonts();
-  const cv = getCvData();
+  const phone = readPhoneArg(process.argv.slice(2));
+  const cv = getCvData({ phone });
   const [portrait, qr] = await Promise.all([
     composePortrait(path.join(ROOT, "public", "Jordan-T-portrait.svg")),
     qrWithBadge(cv.url),
   ]);
 
-  const out = path.join(ROOT, "public", "cv-jordan-t.pdf");
+  // The phone number must never ship on the public site: including it
+  // switches the output to a distinct, gitignored filename meant to be
+  // shared by hand (e.g. by email), not linked from the site.
+  const filename = phone ? "cv-jordan-t-full.pdf" : "cv-jordan-t.pdf";
+  const out = path.join(ROOT, "public", filename);
   await mkdir(path.dirname(out), { recursive: true });
-  await renderToFile(<Cv assets={{ portrait, qr }} />, out);
+  await renderToFile(<Cv assets={{ portrait, qr }} phone={phone} />, out);
   console.log(`✓ CV généré : ${path.relative(ROOT, out)}`);
 }
 

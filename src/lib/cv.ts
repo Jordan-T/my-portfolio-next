@@ -24,6 +24,7 @@ export interface CvData {
   role: string;
   location: string;
   email: string;
+  phone?: string;
   url: string;
   philosophy: string;
   socials: SocialLink[];
@@ -65,13 +66,17 @@ function labels(tags: Tag[]): string[] {
 /**
  * Assembles the CV from the same configs the site renders, so the exported
  * document can never drift from the live portfolio. Pure and dependency-free.
+ *
+ * `phone` is not part of the site config (it must never ship on the public
+ * site) — pass it explicitly to include it, e.g. for a private export.
  */
-export function getCvData(): CvData {
+export function getCvData(options?: { phone?: string }): CvData {
   return {
     name: siteConfig.name,
     role: siteConfig.role,
     location: siteConfig.location,
     email: siteConfig.email,
+    phone: options?.phone,
     url: siteConfig.url,
     socials: [...siteConfig.socials],
     yearsOfExperience,

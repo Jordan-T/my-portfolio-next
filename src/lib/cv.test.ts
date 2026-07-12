@@ -53,4 +53,9 @@ describe("getCvData", () => {
     const second = getCvData().experience.map((job) => job.company);
     expect(first).toEqual(second);
   });
+
+  it("omits the phone by default and includes it when passed explicitly", () => {
+    expect(getCvData().phone).toBeUndefined();
+    expect(getCvData({ phone: "0612345678" }).phone).toBe("0612345678");
+  });
 });
